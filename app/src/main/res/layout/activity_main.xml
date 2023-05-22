@@ -6,13 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <EditText
+        android:id="@+id/City"
+        android:layout_width="313dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="380dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter City Please"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="216dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="229dp"
+        android:text="Submit"
+        android:onClick="searchCity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
