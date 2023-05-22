@@ -1,11 +1,12 @@
 package com.example.codechallangeweatherapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.codechallenge.Data.WeatherData
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getWeather(city: String, key: String) {
-        // val intent = Intent(this, ResultsScreen::class.java)
+
 
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
@@ -43,7 +44,16 @@ class MainActivity : AppCompatActivity() {
                 val responseBody = response?.body()!!
 
                 println(responseBody)
-
+                val intent = Intent(this@MainActivity, ResultsScreen::class.java)
+                intent.putExtra("city", city)
+                intent.putExtra("temp", responseBody.main.temp.toString())
+                intent.putExtra("high_temp", responseBody.main.temp_max.toString())
+                intent.putExtra("low_temp", responseBody.main.temp_min.toString())
+                intent.putExtra("icon", responseBody.weather[0].icon.toString())
+                var b = Bundle()
+                b.putBoolean("isActive", true)
+                intent.putExtras(b)
+                startActivity(intent);
 
 
             }

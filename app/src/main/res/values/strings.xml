@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">codeChallangeWeatherApp</string>
+    <string name="high">High</string>
+    <string name="low">Low</string>
 </resources>
