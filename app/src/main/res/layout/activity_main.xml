@@ -12,10 +12,11 @@
         android:layout_height="79dp"
         android:layout_marginBottom="380dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Enter City Please"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -24,8 +25,19 @@
         android:layout_height="95dp"
         android:layout_marginStart="104dp"
         android:layout_marginBottom="229dp"
-        android:text="Submit"
         android:onClick="searchCity"
+        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:onClick="getlocation"
+        android:id="@+id/currentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/City"
+        app:srcCompat="@android:drawable/ic_menu_mylocation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
